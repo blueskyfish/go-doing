@@ -1,6 +1,9 @@
 package route
 
-import "github.com/labstack/echo/v4"
+import (
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
+)
 
 var server = echo.New()
 
@@ -11,6 +14,10 @@ func Start(address string) error {
 
 func init() {
 	server.HideBanner = true
+
+	// middlewares
+	server.Use(middleware.Logger())
+	server.Use(middleware.Recover())
 
 	// routes
 	server.GET("/", getAbout)
