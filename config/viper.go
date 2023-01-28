@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/spf13/viper"
 	"os"
+	"path/filepath"
 	"strconv"
 )
 
@@ -32,6 +33,11 @@ func GetAddress() string {
 	host := getString("host", "localhost")
 	port := getInt("port", 8080)
 	return host + ":" + strconv.Itoa(port)
+}
+
+func GetDatabaseFilename() string {
+	currentDir, _ := os.Getwd()
+	return getString("file", filepath.Join(currentDir, "doing.db"))
 }
 
 func getString(key string, defValue string) string {

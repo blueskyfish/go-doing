@@ -20,5 +20,7 @@ func init() {
 	server.Use(middleware.Recover())
 
 	// routes
-	server.GET("/", getAbout)
+	server.GET("/about", getAbout)
+	server.GET("/tasks", getTaskList)
+	server.POST("/tasks", createTask)
 }
