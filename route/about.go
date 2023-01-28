@@ -16,7 +16,7 @@ var about About
 func init() {
 	about = About{
 		Name:        "Go-Doing",
-		Description: "The popular TODO application in the Go language",
+		Description: "Another TODO application in the language Go",
 		Version:     "0.0.1",
 	}
 }

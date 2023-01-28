@@ -1,4 +1,4 @@
 
 # Golang - Doing
 
-> The popular TODO application in the Go language
+> Another TODO application in the language Go
