@@ -7,12 +7,7 @@ import (
 
 // CreateTask create a new task
 func CreateTask(body models.TaskPayload) models.Task {
-	entity := models.Task{
-		Title:       body.Title,
-		Description: body.Description,
-		Done:        body.Done,
-		Date:        body.Date,
-	}
+	entity := toTask(body)
 
 	database.Create(&entity)
 	fmt.Printf("Inser new Task %d\n", entity.ID)

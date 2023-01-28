@@ -24,3 +24,8 @@ type TaskPayload struct {
 	Done        bool   `json:"done"`
 	Date        string `json:"date"`
 }
+
+// TaskDone the payload for task being done or undone
+type TaskDone struct {
+	Done bool `json:"done"`
+}

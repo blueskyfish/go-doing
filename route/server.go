@@ -23,4 +23,6 @@ func init() {
 	server.GET("/about", getAbout)
 	server.GET("/tasks", getTaskList)
 	server.POST("/tasks", createTask)
+	server.PUT("/tasks/:id", updateTask)
+	server.PUT("/tasks/:id/done", updateTaskDone)
 }
