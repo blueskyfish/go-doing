@@ -29,27 +29,3 @@ func init() {
 		fmt.Println("Doing models are not migrate", err)
 	}
 }
-
-// GetTaskList - get the list of tasks
-func GetTaskList() []models.Task {
-	var todos []models.Task
-
-	database.Find(&todos)
-
-	return todos
-}
-
-// CreateTask create a new task
-func CreateTask(body models.TaskPayload) models.Task {
-	entity := models.Task{
-		Title:       body.Title,
-		Description: body.Description,
-		Done:        body.Done,
-		Date:        body.Date,
-	}
-
-	database.Create(&entity)
-	fmt.Printf("Inser new Task %d\n", entity.ID)
-
-	return entity
-}
