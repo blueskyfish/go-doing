@@ -26,3 +26,10 @@ bin/
 # IDE
 .idea/
 .vscode/
+
+# web directory is filled by building
+web/*
+!web/.gitkeep
+
+# Change of doing database
+doing.db

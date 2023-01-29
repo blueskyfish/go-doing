@@ -11,7 +11,8 @@ var serveCmd = &cobra.Command{
 	Short: "serve - Serves the server and listen for requests",
 
 	RunE: func(cmd *cobra.Command, args []string) error {
+		webFiles := config.WebFiles()
 		address := config.GetAddress()
-		return route.Start(address)
+		return route.Start(webFiles, address)
 	},
 }
