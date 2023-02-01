@@ -1,0 +1,17 @@
+<div class="p-2">
+  <dng-detail-task
+    [task]="task"
+  ></dng-detail-task>
+  <div class="d-flex justify-content-end">
+    <a routerLink="/tasks"
+       class="ms-2 btn btn-outline-secondary"
+    >
+      Task List
+    </a>
+    <a [routerLink]="routeTaskEdit()"
+       class="ms-2 btn btn-outline-secondary"
+    >
+      Edit
+    </a>
+  </div>
+</div>

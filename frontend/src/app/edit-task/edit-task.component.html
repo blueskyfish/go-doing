@@ -1,0 +1,27 @@
+<div class="p-2">
+  <dng-task-form
+    [task]="task"
+    [resetTask]="task"
+    (taskChange)="changeTask($event)"
+  ></dng-task-form>
+  <div class="d-flex justify-content-end">
+    <a routerLink="/tasks"
+       class="ms-2 btn btn-outline-secondary"
+    >
+      Task List
+    </a>
+    <a [routerLink]="routeTaskDetail()"
+       class="ms-2 btn btn-outline-secondary"
+    >
+      Detail
+    </a>
+    <button
+      type="button"
+      class="ms-2 btn btn-primary"
+      [disabled]="!changedTask"
+      (click)="saveTask()"
+    >
+      Save
+    </button>
+  </div>
+</div>

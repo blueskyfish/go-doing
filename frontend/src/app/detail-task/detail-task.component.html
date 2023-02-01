@@ -1,0 +1,23 @@
+<div class="mb-3">
+  <ng-container *ngIf="task">
+    <div class="d-flex align-items-center">
+      <span class="flex-grow-1 h3">Task {{ task.id === -1 ? 'New' : task.id }}</span>
+    </div>
+    <div class="mb-2">
+      <p class="dng-label">Title</p>
+      <p class="dng-value">{{ task.title }}</p>
+    </div>
+    <div class="mb-2">
+      <p class="dng-label">Description</p>
+      <p class="dng-value">{{ task.description }}</p>
+    </div>
+    <div class="mb-2">
+      <p class="dng-label">Status</p>
+      <p class="dng-value">{{ task.done ? 'Done' : 'Open' }}</p>
+    </div>
+    <div class="mb-2">
+      <p class="dng-label">Date</p>
+      <p class="dng-value">{{ task.date }}</p>
+    </div>
+  </ng-container>
+</div>
