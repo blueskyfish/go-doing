@@ -1,0 +1,55 @@
+<div [formGroup]="formGroup">
+  <div class="d-flex align-items-center" *ngIf="task">
+    <span class="flex-grow-1 h3">Task {{ task.id === -1 ? 'New' : task.id }}</span>
+    <button
+      type="button"
+      class="btn btn-outline-secondary btn-sm"
+      (click)="setResetTask()"
+    >
+      <i class="mdi mdi-lock-reset"></i>
+    </button>
+  </div>
+  <div class="mb-2">
+    <label for="task__title" class="form-label">Title</label>
+    <input
+      id="task__title"
+      type="text"
+      class="form-control"
+      formControlName="title"
+    >
+  </div>
+  <div class="mb-2">
+    <label for="task__description" class="form-label">Title</label>
+    <textarea
+      id="task__description"
+      class="form-control"
+      rows="4"
+      formControlName="description"
+    ></textarea>
+  </div>
+  <div class="mb-2">
+    <label for="task__date" class="form-label">Date</label>
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        id="task__date"
+        ngbDatepicker
+        formControlName="date"
+        #d="ngbDatepicker"
+      >
+      <button
+        class="btn"
+        (click)="d.toggle()"
+        type="button"
+      >
+        <i class="mdi mdi-calendar-outline"></i>
+      </button>
+    </div>
+  </div>
+  <div class="mb-2 form-check form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="task__done">
+    <label class="form-check-label" for="task__done">Open or Done</label>
+  </div>
+  <input type="hidden" formControlName="id">
+</div>
