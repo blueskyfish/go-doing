@@ -17,32 +17,6 @@ const pad = (value: any, len: number = 2): string => {
   return `${value}`.padStart(len, '0');
 }
 
-const adjustDate = (value: NgbDate | string | undefined | null): string => {
-  if (typeof value === 'string') {
-    return value;
-  }
-  if (value === null || value === undefined) {
-    return ''
-  }
-  if (value.day || value.month || value.year) {
-    return `${value.year}-${pad(value.month)}-${pad(value.day)}`;
-  }
-  return '';
-}
-
-const parseDate = (value: string): NgbDateStruct | string => {
-  const [year, month, day ] = value.split('-');
-  try {
-    return {
-      year: parseInt(year, 10),
-      month: parseInt(month, 10),
-      day: parseInt(day, 10),
-    }
-  } catch (e) {
-    return ''
-  }
-}
-
 @Component({
   selector: 'dng-task-form',
   templateUrl: './task-form.component.html',
@@ -61,10 +35,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
   set task(value: TaskEntity | undefined) {
     this._task = value ?? { ...EMPTY_TASK};
     if (value) {
-      this.formGroup.patchValue({
-        ...value,
-        date: parseDate(value.date) as string,
-      }, { emitEvent: false });
+      this.formGroup.patchValue(value, { emitEvent: false });
     } else {
       this.formGroup.patchValue(EMPTY_TASK, { emitEvent: false })
     }
@@ -96,10 +67,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
         // @ts-ignore
         debounceTime(100),
         map((value: TaskEntity): TaskEntity => {
-          return {
-            ...value,
-            date: adjustDate(value.date),
-          };
+          return value;
         })
       )
       // @ts-ignore

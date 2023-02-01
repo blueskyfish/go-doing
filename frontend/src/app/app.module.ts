@@ -4,12 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateAdapter, NgbDateParserFormatter, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { ROUTE_LIST } from './app.routing';
 import { HeaderComponent } from './header/header.component';
 import { NewTaskComponent } from './new-task/new-task.component';
+import { DateAdapterService } from './services/date-adapter.service';
+import { DateFormatterService } from './services/date-formatter.service';
 import { TaskListComponent } from './task-list/task-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
@@ -40,7 +42,16 @@ import { DetailTaskComponent } from './detail-task/detail-task.component';
 
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: NgbDateAdapter,
+      useClass: DateAdapterService,
+    },
+    {
+      provide: NgbDateParserFormatter,
+      useClass: DateFormatterService,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
