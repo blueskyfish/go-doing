@@ -40,5 +40,12 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
+  },
+  "overrides": {
+    "semver": "7.5.2",
+    "@babel/traverse": "7.23.2",
+    "engine.io": "6.4.2",
+    "postcss": "8.4.31",
+    "socket.io-parser": "4.2.3"
   }
 }
