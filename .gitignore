@@ -33,3 +33,6 @@ web/*
 
 # Change of doing database
 doing.db
+
+# Mac
+.DS_Store
