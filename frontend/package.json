@@ -11,27 +11,27 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.2.7",
-    "@angular/common": "^15.2.7",
-    "@angular/compiler": "^15.2.7",
-    "@angular/core": "^15.2.7",
-    "@angular/forms": "^15.2.7",
-    "@angular/platform-browser": "^15.2.7",
-    "@angular/platform-browser-dynamic": "^15.2.7",
-    "@angular/router": "^15.2.7",
+    "@angular/animations": "^16.2.12",
+    "@angular/common": "^16.2.12",
+    "@angular/compiler": "^16.2.12",
+    "@angular/core": "^16.2.12",
+    "@angular/forms": "^16.2.12",
+    "@angular/platform-browser": "^16.2.12",
+    "@angular/platform-browser-dynamic": "^16.2.12",
+    "@angular/router": "^16.2.12",
     "@mdi/font": "^7.1.96",
-    "@ng-bootstrap/ng-bootstrap": "^14.0.1",
-    "@popperjs/core": "^2.11.6",
+    "@ng-bootstrap/ng-bootstrap": "^15.1.2",
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.2.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.12.0"
+    "zone.js": "~0.13.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.2.6",
-    "@angular/cli": "~15.2.6",
-    "@angular/compiler-cli": "^15.2.7",
-    "@angular/localize": "^15.2.7",
+    "@angular-devkit/build-angular": "^16.2.14",
+    "@angular/cli": "~16.2.14",
+    "@angular/compiler-cli": "^16.2.12",
+    "@angular/localize": "^16.2.12",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
@@ -42,10 +42,5 @@
     "typescript": "~4.9.4"
   },
   "overrides": {
-    "semver": "7.5.2",
-    "@babel/traverse": "7.23.2",
-    "engine.io": "6.4.2",
-    "postcss": "8.4.31",
-    "socket.io-parser": "4.2.3"
   }
 }
